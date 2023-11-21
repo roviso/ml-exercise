@@ -1,0 +1,28 @@
+## Programming exercise
+This document outlines the solution to a programming exercise involving the merging of two CSV (Comma-Separated Values) files based on matching entries in their first columns. The exercise specifies that lines from two CSV files should be concatenated based on the value of their first columns. If a line in the first CSV file (CSV1) has a matching first column value in the second CSV file (CSV2), the line from CSV2 is concatenated to the line from CSV1, excluding the first column from CSV2's line to avoid duplication. The concatenated lines are then written to an output file.
+
+The exercise initially suggested the implementation in Java. However, due to a lack of familiarity with Java, the solution is provided using Python with the Pandas library, which offers powerful and efficient data manipulation capabilities.
+
+Approach and Implementation in Python
+
+## Tools Used: Python, Pandas
+
+## Steps in the Implementation
+## Reading the CSV Files:
+Two CSV files are read into separate Pandas DataFrames.
+The pd.read_csv function is used, treating the first column in each file as a regular column (not as an index or header).
+
+## Merging the DataFrames:
+The DataFrames are merged using the pd.merge function.
+The merge is performed on the first column, ensuring that only matching rows (based on the first column) are concatenated.
+
+## Adjusting the Merged DataFrame:
+After merging, the first column from CSV2, now redundant, is set as the index of the merged DataFrame using set_index. This maintains the column's data without duplicating it.
+
+## Writing the Output to a File:
+The final, merged DataFrame is written to an output CSV file using to_csv.
+The header and index are not included in the output file, adhering to the format specified in the exercise.
+
+
+## Conclusion
+This Python implementation efficiently accomplishes the task of merging two CSV files based on matching column values. While the initial suggestion was to implement the solution in Java, Python and Pandas offer a user-friendly and robust alternative for data manipulation tasks such as this. The use of Python also ensures that the solution is accessible to a wider range of programmers, including those who might not be familiar with Java.
