@@ -3,3 +3,5 @@ Java
 ML
 *.pdf
 .DS_Store
+*.zip
+models
